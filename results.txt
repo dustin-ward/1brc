@@ -1,0 +1,5 @@
+Basic:
+102.39s user
+5.28s system
+107% cpu
+1:39.89 total
