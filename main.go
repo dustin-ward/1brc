@@ -28,6 +28,8 @@ func main() {
 		vFunc = v1
 	case "v2":
 		vFunc = v2
+	case "v3":
+		vFunc = v3
 	default:
 		log.Fatalf("no version found for '%s'", version)
 	}
