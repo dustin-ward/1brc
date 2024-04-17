@@ -2,14 +2,13 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"log"
 	"os"
 	"strconv"
 	"strings"
 )
 
-func v1(filename string) {
+func v1(filename string) map[string]*WeatherStation {
 	f, err := os.Open(filename)
 	if err != nil {
 		log.Fatal(err)
@@ -43,15 +42,5 @@ func v1(filename string) {
 		}
 	}
 
-	fmt.Printf("{")
-	out := ""
-	for name, w := range M {
-		out += fmt.Sprintf("%s=%.1f/%.1f/%.1f, ",
-			name,
-			w.MinVal,
-			w.SumVal/float64(w.NumVal),
-			w.MaxVal,
-		)
-	}
-	fmt.Printf("%s}\n", out[:len(out)-2])
+	return M
 }
